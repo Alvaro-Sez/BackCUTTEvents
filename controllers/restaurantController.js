@@ -24,8 +24,8 @@ const addRestaurant = async (req, res) => {
 }
 
 const getRestaurants = async (req, res) => {
-  const restaurant = await Restaurant.find().lean().exec()
-  res.status(200).send({restaurant})
+  const restaurants = await Restaurant.find().lean().exec()
+  res.status(200).send({restaurants})
 }
 
 

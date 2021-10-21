@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const {appConfig} = require('../config')
 
 const reqString={
   type:String,
@@ -10,7 +11,7 @@ const reqString={
 const HotelSchema = new Schema({
   name: reqString,
   hotelInfo:{
-    direcction: String,
+    direction: String,
     numberStars: Number,
     numberRooms: Number,
     checkin_out: String,
@@ -26,11 +27,15 @@ const HotelSchema = new Schema({
   timestamps: true
 })
 
-
-/* ProductSchema.methods.setImgUrl = function(filename){
+HotelSchema.methods.setImgUrl = function(files){
   const {host, port} = appConfig
-  this.imgUrl = `${host}:${port}/public/${filename}`
-} */
+  const arrImgUrl = []
+    files.forEach(
+    el=>arrImgUrl.push(`${host}:${port}/public/hotels/${el.filename}`
+    ))
+    this.imageContentUrl = arrImgUrl
+  }
+
 
 
 module.exports = mongoose.model('hotels', HotelSchema)
