@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 const reqString={
   type:String,
-  required: true
+  required: true,
+  unique: true
 }
 
 const HotelSchema = new Schema({
@@ -24,6 +25,13 @@ const HotelSchema = new Schema({
 },{
   timestamps: true
 })
+
+
+/* ProductSchema.methods.setImgUrl = function(filename){
+  const {host, port} = appConfig
+  this.imgUrl = `${host}:${port}/public/${filename}`
+} */
+
 
 module.exports = mongoose.model('hotels', HotelSchema)
 
