@@ -6,13 +6,7 @@
     "customer":"Pavla",
     "date":"July 22nd, 2021",
     "quotation":{
-      "grupo": "Generali",
-      "text":[
-        "paragraph1",
-        "paragraph2",
-        "paragraph3",
-        "..."
-      ]
+      "grupo": "Generali"
     },
     "accommodation":{
       "hotelIds":[1,2,3]
@@ -20,14 +14,12 @@
     "schedule":[
       {
         "date":"Friday, May 20th 2022",
-        "introducctionText":"As your plane lands, we will meet you at the airport, and transfer the group to the Hotel. This will be our starting point for the tapas tour",
         "eventsCode":[1,2,4,5],
         "lunch":[1,2,4],
         "dinner":[1,2,3]
       },
       {
         "date":"Saturday, May 21st",
-        "introducctionText":"",
         "eventsCode":[5,6,2,1],
         "lunch":[1,2,4],
         "dinner":[6,63,1]

@@ -14,7 +14,15 @@ const CustomerSchema = new Schema({
   name: reqString,
   date: String,
   group: String,
-
+  accomodation:{
+    hotels:[HotelSchema]
+  },
+  schedule:[{
+    date: String,
+    events: [EventSchema],
+    lunch: [RestaurantSchema],
+    dinner: [RestaurantSchema]
+  }]
 },{
   timestamps: true
 })
