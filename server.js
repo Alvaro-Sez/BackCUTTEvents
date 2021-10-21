@@ -1,3 +1,4 @@
+require('dotenv').config()
 const app = require('./app')
 const connectDb = require('./db/mongodb')
 const {appConfig, dbConfig} = require('./config')
@@ -5,7 +6,7 @@ const {appConfig, dbConfig} = require('./config')
 async function initApp(appConfig, dbConfig){
   const {port} = appConfig
   try{
-    await connectDB(dbConfig)
+    await connectDb(dbConfig)
     app.listen(port, ()=> console.log(`server running on port:${port}`))
 
   } catch (e){
