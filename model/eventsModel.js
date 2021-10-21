@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const {appConfig} = require('../config')
 
 const reqString={
   type:String,
@@ -17,10 +18,14 @@ const EventSchema = new Schema({
   timestamps: true
 })
 
-/* ProductSchema.methods.setImgUrl = function(filename){
+EventSchema.methods.setImgUrl = function(files){
   const {host, port} = appConfig
-  this.imgUrl = `${host}:${port}/public/${filename}`
-} */
+  const arrImgUrl = []
+    files.forEach(
+    el=>arrImgUrl.push(`${host}:${port}/public/events/${el.filename}`
+    ))
+    this.imageContentUrl = arrImgUrl
+  }
 
 module.exports = mongoose.model('events', EventSchema)
 

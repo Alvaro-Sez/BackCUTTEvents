@@ -1,8 +1,8 @@
 const multer = require('multer')
 
-const hotelStorage = multer.diskStorage({
+const eventStorage = multer.diskStorage({
   destination: function (req, file, cb){
-    cb(null, './storage/hotels')
+    cb(null, './storage/events')
   },
   filename: function (req, file , cb){
     cb(null, file.fieldname + '-' + Date.now() + '.png')
@@ -10,6 +10,6 @@ const hotelStorage = multer.diskStorage({
 })
 
 
-const uploadHotelsImgs = multer({storage:hotelStorage})
+const uploadEventsImgs = multer({storage:eventStorage})
 
-module.exports = uploadHotelsImgs
+module.exports = uploadEventsImgs
