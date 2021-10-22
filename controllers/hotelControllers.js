@@ -1,4 +1,4 @@
-const Hotel = require('../model/hotelModel')
+const {Hotel} = require('../model/hotelModel')
 
 const addHotel = async(req,res)=> {
   try{

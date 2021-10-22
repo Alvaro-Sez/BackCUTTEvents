@@ -1,4 +1,4 @@
-const Event = require('../model/eventsModel')
+const {Event} = require('../model/eventsModel')
 
 const addEvent = async ( req, res) =>{
   try{
@@ -8,8 +8,8 @@ const addEvent = async ( req, res) =>{
       title,
       textContent
     } = req.body
-
-    const event = await Event({
+    console.log(` from here ${name}`)
+    const event = Event({
       name,
       titleSideBar,
       title,
@@ -42,24 +42,12 @@ const deleteEvent = async(req, res) =>{
   }
 }
 
-const updateEvent = async(req, res)=>{
-  const id = req.params.id
-  try{
-    const event = await Event.findById(id)
-    const modified = Object.assign(event, req.body)
-    console.log(modified, req.body)
-    modified.save()
-    res.send({data: event})
-  } catch{
-    res.status(404).send({error: "event not found"})
-  }
-}
+
 
 const eventControllers = {
   addEvent,
   getEvents,
   deleteEvent,
-  updateEvent
 }
 
 

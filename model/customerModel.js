@@ -1,22 +1,22 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const EventSchema = require('./eventsModel')
-const HotelSchema = require('./hotelModel')
-const RestaurantSchema = require('./restaurantModel')
+const { RestaurantSchema } = require('./restaurantModel')
+const { EventSchema } = require('./eventsModel')
+const { HotelSchema } = require('./hotelModel')
 
 
 const reqString={
   type:String,
-  required: true
+  required: true,
+  unique: true
 }
 
 const CustomerSchema = new Schema({
-  name: reqString,
+  id: reqString,
+  name: String,
   date: String,
   group: String,
-  accomodation:{
-    hotels:[HotelSchema]
-  },
+  hotels:[HotelSchema],
   schedule:[{
     date: String,
     events: [EventSchema],
@@ -27,5 +27,9 @@ const CustomerSchema = new Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('customers', CustomerSchema)
+const Customer = mongoose.model('customers', CustomerSchema)
+
+module.exports = {
+  Customer
+}
 

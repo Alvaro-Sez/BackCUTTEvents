@@ -5,7 +5,6 @@ const {appConfig} = require('../config')
 const reqString={
   type:String,
   required: true,
-  unique: true
 }
 
 const EventSchema = new Schema({
@@ -27,5 +26,9 @@ EventSchema.methods.setImgUrl = function(files){
     this.imageContentUrl = arrImgUrl
   }
 
-module.exports = mongoose.model('events', EventSchema)
+const Event = mongoose.model('events', EventSchema)
 
+module.exports = {
+  Event,
+  EventSchema
+}

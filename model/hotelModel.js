@@ -5,7 +5,6 @@ const {appConfig} = require('../config')
 const reqString={
   type:String,
   required: true,
-  unique: true
 }
 
 const HotelSchema = new Schema({
@@ -36,7 +35,10 @@ HotelSchema.methods.setImgUrl = function(files){
     this.imageContentUrl = arrImgUrl
   }
 
+const Hotel = mongoose.model('hotels', HotelSchema)
 
-
-module.exports = mongoose.model('hotels', HotelSchema)
+module.exports ={
+  Hotel,
+  HotelSchema
+}
 
