@@ -31,9 +31,35 @@ const getEvents = async (req, res) =>{
   res.status(200).send({events})
 }
 
+const deleteEvent = async(req, res) =>{
+  const id = req.params.id
+  try {
+    const eventToDelete = await Event.findById(id)
+    await eventToDelete.remove()
+    res.status(200).send({success:true})
+  } catch(e){
+    res.status(404).send({message:e.message})
+  }
+}
+
+const updateEvent = async(req, res)=>{
+  const id = req.params.id
+  try{
+    const event = await Event.findById(id)
+    const modified = Object.assign(event, req.body)
+    console.log(modified, req.body)
+    modified.save()
+    res.send({data: event})
+  } catch{
+    res.status(404).send({error: "event not found"})
+  }
+}
+
 const eventControllers = {
   addEvent,
-  getEvents
+  getEvents,
+  deleteEvent,
+  updateEvent
 }
 
 

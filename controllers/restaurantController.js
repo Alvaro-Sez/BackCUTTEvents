@@ -28,10 +28,21 @@ const getRestaurants = async (req, res) => {
   res.status(200).send({restaurants})
 }
 
+const deleteRestaurant = async(req, res) =>{
+  try {
+    const id = req.params.id
+    const restaurantToDelete = await Restaurant.findById(id)
+    await restaurantToDelete.remove()
+    res.status(200).send({success:true})
+  } catch(e){
+    res.status(404).send({message:e.message})
+  }
+}
 
 const restaurantControllers = {
   addRestaurant,
-  getRestaurants
+  getRestaurants,
+  deleteRestaurant
 }
 
 
