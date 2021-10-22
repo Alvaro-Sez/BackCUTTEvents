@@ -29,9 +29,52 @@ const getCustomers = async ( req, res) =>{
   res.status(200).send({customers})
 }
 
+const deleteCustomer = async ( req, res ) => {
+    const id = req.params.id
+    try{
+      const customerToDelete = await Customer.findById(id)
+      await customerToDelete.remove()
+      res.status(200).send({succes: true})
+    } catch(e){
+      res.status(404).send({message: e.message})
+    }
+}
+
+const addScheduleObj = async ( req, res ) => {
+  const id = req.params.id
+  const scheduleObj = req.body
+  try{
+    const customer = await Customer.findById(id)
+    console.log(customer)
+    customer.schedule.push(scheduleObj)
+    const customerUpdated = await customer.save()
+    res.status(200).send({customerUpdated})
+  } catch (e){
+    res.status(404).send({message: e.message})
+  }
+}
+
+const addHotelsArray = async ( req, res ) =>{
+  const id = req.params.id
+  const hotelsArr = req.body
+  try{
+    const customer = await Customer.findById(id)
+
+    hotelsArr.forEach( hotel=>customer.hotels.push(hotel) )
+    
+    const customerUpdated = await customer.save()
+    res.status(200).send({customerUpdated})
+  } catch (e){
+    res.status(404).send({message: e.message})
+  }
+}
+
 const customerControllers = {
   addCustomer,
-  getCustomers 
+  getCustomers,
+  deleteCustomer,
+  addScheduleObj,
+  addHotelsArray
 }
 
 module.exports = customerControllers
