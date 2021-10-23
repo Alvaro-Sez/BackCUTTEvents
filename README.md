@@ -58,48 +58,48 @@ Endpoints:
   projects:
 
     *GET*
-    /projects             (get all projecs) <!-- works -->
-    /project/:code        (gets one project by code) <!-- works -->
+    /projects             (get all projecs) 
+    /project/:code        (gets one project by code) 
     
     *POST*
-    /projects             (adds new project) <!-- works -->
-    /addSchedule/:_id     (adds [Objects] in schedule field in project by _id) <!-- works -->
-    /resetSchedule/:_id   (resets the schedule field in project by _id) <!-- works -->
-    /addHotels/:_id       (adds [Hotels] in hotels field in project by  _id) <!-- works --> 
-    /resetHotels/:_id     (resets the hotels field in project by _id) <!-- works -->
+    /projects             (adds new project)  type: form-data
+    /addSchedule/:_id     (adds [Objects] in project.schedule field in project by _id) type: json
+    /resetSchedule/:_id   (resets the schedule field in project by _id) 
+    /addHotels/:_id       (adds [Hotels] in hotels field in project by  _id) type: json
+    /resetHotels/:_id     (resets the hotels field in project by _id) 
 
     *DELETE*
-    /project/:_id         (deletes the project by _id) <!-- works -->
+    /project/:_id         (deletes the project by _id) 
 
   hotels:
 
     *GET*
-    /hotels               (get all hotels) <!-- works -->
+    /hotels               (get all hotels) 
 
     *POST*
-    /hotels               (adds new hotel) <!-- works -->
+    /hotels               (adds new hotel) type: form-data 
 
     *DELETE*
-    /hotels/:_id          (deletes the hotel by _id) <!-- works -->
+    /hotels/:_id          (deletes the hotel by _id)
 
   restaurants:
 
     *GET*
-    /restaurants          (get all restaurants) <!-- works -->
+    /restaurants          (get all restaurants) 
 
     *POST*
-    /restaurants          (adds new restaurant) <!-- works -->
+    /restaurants          (adds new restaurant)  type: form-data 
 
     *DELETE*
-    /restaurants/:_id     (deletes the restaurant by _id) <!-- works -->
+    /restaurants/:_id     (deletes the restaurant by _id) 
 
   events:
 
     *GET*
-    /events               (get all events) <!-- works -->
+    /events               (get all events) 
 
     *POST*
-    /events               (adds new event) <!-- works -->
+    /events               (adds new event) type: form-data 
 
     *DELETE*
-    /events/:_id          (deletes the event by _id) <!-- works -->
+    /events/:_id          (deletes the event by _id) 
