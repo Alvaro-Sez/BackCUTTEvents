@@ -1,21 +1,21 @@
-schemasDB:
+##schemasDB:
 
-  *PROJECTS*
-    code: reqString,
-    name: String,
-    date: String,
-    group: String,
-    hotels:[Hotels],
-    schedule:[
-      {
-      date: String,
-      events: [Events],
-      lunch: [Restaurants],
-      dinner: [Restaurants]
+  #PROJECTS
+&nbsp;&nbsp code: reqString,<br/>
+    name: String,<br/>
+    date: String,<br/>
+    group: String,<br/>
+    hotels:[Hotels],<br/>
+    schedule:[<br/>
+      {<br/>
+      date: String,<br/>
+      events: [Events],<br/>
+      lunch: [Restaurants],<br/>
+      dinner: [Restaurants]<br/>
       }
     ]
   
-  *HOTELS*
+  #HOTELS
     name: reqString,
     city: String,
     hotelInfo:{
@@ -32,13 +32,13 @@ schemasDB:
     textContent: [String],
     imageContentUrl: [String]  (name images when post)
 
-  *RESTAURANTS*
+  #RESTAURANTS
     name: reqString,
     city: String,
     textContent:[String],
     imageContentUrl: [String]  (name images when post)
 
-  *EVENTS*
+  #EVENTS
     name: reqString,
     city: String,
     titleSideBar: String,
@@ -47,7 +47,7 @@ schemasDB:
     imageContentUrl: [String]  (name images when post)
 
 
-Endpoints:
+##Endpoints:
   
   projects:
 
