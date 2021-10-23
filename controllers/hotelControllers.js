@@ -4,12 +4,14 @@ const addHotel = async(req,res)=> {
   try{
     const {
       name,
+      city,
       hotelInfo,
       textContent,
     } = req.body 
 
     const hotel = Hotel({
       name,
+      city,
       hotelInfo,
       textContent
     })

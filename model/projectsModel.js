@@ -11,8 +11,8 @@ const reqString={
   unique: true
 }
 
-const CustomerSchema = new Schema({
-  id: reqString,
+const ProjectSchema = new Schema({
+  code: reqString,
   name: String,
   date: String,
   group: String,
@@ -27,9 +27,9 @@ const CustomerSchema = new Schema({
   timestamps: true
 })
 
-const Customer = mongoose.model('customers', CustomerSchema)
+const Project = mongoose.model('projects', ProjectSchema)
 
 module.exports = {
-  Customer
+  Project
 }
 

@@ -9,6 +9,7 @@ const reqString={
 
 const HotelSchema = new Schema({
   name: reqString,
+  city: String,
   hotelInfo:{
     direction: String,
     numberStars: Number,

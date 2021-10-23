@@ -9,6 +9,7 @@ const reqString={
 
 const EventSchema = new Schema({
   name: reqString,
+  city: String,
   titleSideBar: String,
   title: String,
   textContent: [String],

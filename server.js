@@ -16,3 +16,6 @@ async function initApp(appConfig, dbConfig){
 }
 
 initApp(appConfig, dbConfig)
+
+
+/* filtro por ciudad de los proveedores, cambiar el nombre de customers por project */

@@ -4,12 +4,14 @@ const addEvent = async ( req, res) =>{
   try{
     const{
       name,
+      city,
       titleSideBar,
       title,
       textContent
     } = req.body
     const event = Event({
       name,
+      city,
       titleSideBar,
       title,
       textContent

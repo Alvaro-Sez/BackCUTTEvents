@@ -9,6 +9,7 @@ const reqString={
 
 const RestaurantSchema = new Schema({
   name: reqString,
+  city: String,
   textContent:[String],
   imageContentUrl:[String]
 },{

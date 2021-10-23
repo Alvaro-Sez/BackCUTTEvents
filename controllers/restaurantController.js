@@ -5,11 +5,13 @@ const addRestaurant = async (req, res) => {
   try{
     const{
       name,
+      city,
       textContent
     } = req.body
 
     const restaurant = Restaurant({
       name,
+      city,
       textContent
     })
     if(req.files){
