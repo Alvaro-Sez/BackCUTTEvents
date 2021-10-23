@@ -1,21 +1,21 @@
 ##schemasDB:
-<code>
+
   #PROJECTS
- 
-    code: reqString,<br/>
-    name: String,<br/>
-    date: String,<br/>
-    group: String,<br/>
-    hotels:[Hotels],<br/>
-    schedule:[<br/>
-      {<br/>
-      date: String,<br/>
-      events: [Events],<br/>
-      lunch: [Restaurants],<br/>
-      dinner: [Restaurants]<br/>
-      }
-    ]
- 
+<code> 
+  code: reqString,
+  name: String,
+  date: String,
+  group: String,
+  hotels:[Hotels],
+  schedule:[
+    {
+    date: String,
+    events: [Events],
+    lunch: [Restaurants],
+    dinner: [Restaurants]
+    }
+  ]
+</code> 
   #HOTELS
     name: reqString,
     city: String,
