@@ -15,7 +15,6 @@ const addEvent = async ( req, res) =>{
       textContent
     })
     if(req.files){
-      console.log(req.files)
       const { files } = req
       event.setImgUrl(files)  
     }

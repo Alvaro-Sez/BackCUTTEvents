@@ -6,7 +6,8 @@ config ={
   dbConfig:{
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dbName: process.env.DB_NAME
+    dbName: process.env.DB_NAME,
+    dbURI: process.env.DB_URI
   },
 }
 

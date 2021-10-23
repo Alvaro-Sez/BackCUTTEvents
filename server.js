@@ -6,7 +6,7 @@ const {appConfig, dbConfig} = require('./config')
 async function initApp(appConfig, dbConfig){
   const {port} = appConfig
   try{
-    await connectDb(dbConfig)
+    await connectDb(dbConfig.dbURI)
     app.listen(port, ()=> console.log(`server running on port:${port}`))
 
   } catch (e){
