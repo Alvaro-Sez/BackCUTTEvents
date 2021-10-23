@@ -1,6 +1,6 @@
 schemasDB:
 
-  Projects:
+  *Projects*
     code: reqString,
     name: String,
     date: String,
@@ -15,7 +15,7 @@ schemasDB:
       }
     ]
   
-  Hotels:
+  *Hotels*
     name: reqString,
     city: String,
     hotelInfo:{
@@ -32,13 +32,13 @@ schemasDB:
     textContent: [String],
     imageContentUrl: [String]  (name images when post)
 
-  Restaurants:
+  *Restaurants*
     name: reqString,
     city: String,
     textContent:[String],
     imageContentUrl: [String]  (name images when post)
 
-  Events:
+  *Events*
     name: reqString,
     city: String,
     titleSideBar: String,
