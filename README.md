@@ -63,7 +63,7 @@ Endpoints:
     
     *POST*
     /projects             (adds new project)  type: form-data
-    /addSchedule/:_id     (adds [Objects] in project.schedule by project _id) type: json
+    /addSchedule/:_id     (adds [Object] in project.schedule by project _id) type: json
     /resetSchedule/:_id   (resets the schedule field in project by _id) 
     /addHotels/:_id       (adds [Hotels] in project.hotels by project _id) type: json
     /resetHotels/:_id     (resets the hotels field in project by _id) 
