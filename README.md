@@ -33,7 +33,7 @@ schemasDB:
       restaurants: String
     },  
     textContent: [String],
-    imageContentUrl: [String]  (name images when post)
+    imageContentUrl: [String]  (key:images when post)
 ~~~
 ~~~  
   RESTAURANTS
@@ -41,7 +41,7 @@ schemasDB:
     name: reqString,
     city: String,
     textContent:[String],
-    imageContentUrl: [String]  (name images when post)
+    imageContentUrl: [String]  (key:images when post)
 
   EVENTS
   
@@ -50,7 +50,7 @@ schemasDB:
     titleSideBar: String,
     title: String,
     textContent: [String],
-    imageContentUrl: [String]  (name images when post)
+    imageContentUrl: [String]  (key: images when post)
 ~~~ 
 
 Endpoints:
