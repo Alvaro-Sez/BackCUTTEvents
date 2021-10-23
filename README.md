@@ -1,7 +1,7 @@
 ##schemasDB:
-
+<code>
   #PROJECTS
-  <code>
+ 
     code: reqString,<br/>
     name: String,<br/>
     date: String,<br/>
@@ -15,7 +15,7 @@
       dinner: [Restaurants]<br/>
       }
     ]
-  </code>
+ 
   #HOTELS
     name: reqString,
     city: String,
@@ -46,7 +46,7 @@
     title: String,
     textContent: [String],
     imageContentUrl: [String]  (name images when post)
-
+ </code>
 
 ##Endpoints:
   
