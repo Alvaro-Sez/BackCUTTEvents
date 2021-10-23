@@ -1,7 +1,8 @@
 ##schemasDB:
 
   #PROJECTS
-&nbsp;&nbsp code: reqString,<br/>
+  <code>
+    code: reqString,<br/>
     name: String,<br/>
     date: String,<br/>
     group: String,<br/>
@@ -14,7 +15,7 @@
       dinner: [Restaurants]<br/>
       }
     ]
-  
+  </code>
   #HOTELS
     name: reqString,
     city: String,
