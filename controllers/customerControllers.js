@@ -29,6 +29,13 @@ const getCustomers = async ( req, res) =>{
   res.status(200).send({customers})
 }
 
+const getOneCustomer = async ( req, res ) => {
+  const id = req.params.id 
+  const customer = await Customer.findOne({id:id})
+  res.status(200).send({customer})
+}
+
+
 const deleteCustomer = async ( req, res ) => {
     const id = req.params.id
     try{
@@ -74,7 +81,8 @@ const customerControllers = {
   getCustomers,
   deleteCustomer,
   addScheduleObj,
-  addHotelsArray
+  addHotelsArray,
+  getOneCustomer
 }
 
 module.exports = customerControllers

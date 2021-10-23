@@ -1,11 +1,11 @@
 const express = require('express')
 const { addEvent, getEvents, deleteEvent } = require('../controllers/eventControllers')
 const apiEvents = express.Router()
-const uploadEventsImgs = require('../libs/eventStorage')
+const uploadS3 = require('../libs/s3Storage')
 
 
 apiEvents.get('/events', getEvents)
-apiEvents.post('/events', uploadEventsImgs.array('images',12), addEvent)
+apiEvents.post('/events', uploadS3.array('images',12), addEvent)
 apiEvents.delete('/events/:id', deleteEvent)
 
 

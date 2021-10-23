@@ -6,14 +6,16 @@ const {
   getCustomers,
   deleteCustomer,
   addScheduleObj,
-  addHotelsArray
+  addHotelsArray,
+  getOneCustomer
 } = require('../controllers/customerControllers')
 
-apiCustomers.post('/customers', upload.none(), addCustomer)
 apiCustomers.get('/customers', getCustomers)
-apiCustomers.delete('/customers/:id', deleteCustomer)
+apiCustomers.get('/customer/:id', getOneCustomer)
+apiCustomers.post('/customers', upload.none(), addCustomer)
 apiCustomers.post('/addSchedule/:id', addScheduleObj )
 apiCustomers.post('/addHotels/:id', addHotelsArray )
+apiCustomers.delete('/customers/:id', deleteCustomer)
 
 
 

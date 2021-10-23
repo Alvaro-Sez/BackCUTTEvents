@@ -18,13 +18,11 @@ const RestaurantSchema = new Schema({
 
 
 RestaurantSchema.methods.setImgUrl = function(files){
-const {host, port} = appConfig
-const arrImgUrl = []
-  files.forEach(
-  el=>arrImgUrl.push(`${host}:${port}/public/restaurants/${el.filename}`
-  ))
-  this.imageContentUrl = arrImgUrl
-}
+  const arrImgUrl = []
+    files.forEach(
+    el=>arrImgUrl.push(el.location))
+    this.imageContentUrl = arrImgUrl
+  }
 
 const Restaurant = mongoose.model('restaurants', RestaurantSchema)
 

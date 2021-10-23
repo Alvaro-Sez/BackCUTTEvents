@@ -8,7 +8,6 @@ const addEvent = async ( req, res) =>{
       title,
       textContent
     } = req.body
-    console.log(` from here ${name}`)
     const event = Event({
       name,
       titleSideBar,
@@ -16,6 +15,7 @@ const addEvent = async ( req, res) =>{
       textContent
     })
     if(req.files){
+      console.log(req.files)
       const { files } = req
       event.setImgUrl(files)  
     }

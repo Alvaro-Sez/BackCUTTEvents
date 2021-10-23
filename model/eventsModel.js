@@ -18,11 +18,9 @@ const EventSchema = new Schema({
 })
 
 EventSchema.methods.setImgUrl = function(files){
-  const {host, port} = appConfig
   const arrImgUrl = []
     files.forEach(
-    el=>arrImgUrl.push(`${host}:${port}/public/events/${el.filename}`
-    ))
+    el=>arrImgUrl.push(el.location))
     this.imageContentUrl = arrImgUrl
   }
 
