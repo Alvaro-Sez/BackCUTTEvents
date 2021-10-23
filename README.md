@@ -1,4 +1,4 @@
-##schemasDB:
+schemasDB:
 ~~~
  PROJECTS
 
@@ -50,7 +50,7 @@
     imageContentUrl: [String]  (name images when post)
 ~~~ 
 
-##Endpoints:
+Endpoints:
   
   projects:
 
