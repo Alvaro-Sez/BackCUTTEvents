@@ -18,6 +18,7 @@ schemasDB:
 ~~~
 ~~~  
   HOTELS
+  
     name: reqString,
     city: String,
     hotelInfo:{
@@ -36,12 +37,14 @@ schemasDB:
 ~~~
 ~~~  
   RESTAURANTS
+  
     name: reqString,
     city: String,
     textContent:[String],
     imageContentUrl: [String]  (name images when post)
 
   EVENTS
+  
     name: reqString,
     city: String,
     titleSideBar: String,
