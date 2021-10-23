@@ -86,7 +86,7 @@ Endpoints:
     /hotels               (get all hotels) 
 
     *POST*
-    /hotels               (adds new hotel) type: form-data 
+    /hotels               (adds new hotel) type: form-data (12 images max)
 
     *DELETE*
     /hotels/:_id          (deletes the hotel by _id)
@@ -97,7 +97,7 @@ Endpoints:
     /restaurants          (get all restaurants) 
 
     *POST*
-    /restaurants          (adds new restaurant)  type: form-data 
+    /restaurants          (adds new restaurant)  type: form-data (12 images max)
 
     *DELETE*
     /restaurants/:_id     (deletes the restaurant by _id) 
@@ -108,7 +108,7 @@ Endpoints:
     /events               (get all events) 
 
     *POST*
-    /events               (adds new event) type: form-data 
+    /events               (adds new event) type: form-data (12 images max)
 
     *DELETE*
     /events/:_id          (deletes the event by _id) 
