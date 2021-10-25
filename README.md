@@ -11,6 +11,7 @@ project{
   departureDay: String,
   nrPax: Number,
   clientCo: String,
+  clientAccManager: String,
   hotels:[Hotels],
   schedule:[
     {
