@@ -35,7 +35,7 @@ project{
       numberRooms: Number,
       checkin_out: String,
       meetingRooms: String,
-      WheelChariAccesible: Boolean,
+      wheelChairAccesible: Boolean,
       wifiSpeed: String,
       swimmingPool: String,
       restaurants: String
