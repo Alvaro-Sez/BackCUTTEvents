@@ -3,10 +3,14 @@ schemasDB:
  PROJECTS:
  
 project{
-  code: reqString,
-  name: String,
-  date: String,
-  group: String,
+  code: String,
+  accountManager: String,
+  groupName: String,
+  groupLocation: String,
+  arrivalDay: String,
+  departureDay: String,
+  nrPax: Number,
+  clientCo: String,
   hotels:[Hotels],
   schedule:[
     {
