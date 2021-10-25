@@ -1,5 +1,5 @@
 schemasDB:
-
+~~~
  PROJECTS:
  
 project{
@@ -22,6 +22,8 @@ project{
     }
   ]
 }
+~~~
+~~~  
   HOTELS:
   
  hotel{ 
@@ -41,6 +43,8 @@ project{
     textContent: [String],
     imageContentUrl: [String]  (key:images when post)
   }
+~~~
+~~~  
   RESTAURANTS:
   
   restaurant{
@@ -49,6 +53,8 @@ project{
     textContent:[String],
     imageContentUrl: [String]  (key:images when post)
   }
+~~~   
+~~~  
   EVENTS:
   
   event{
@@ -59,50 +65,55 @@ project{
     textContent: [String],
     imageContentUrl: [String]  (key: images when post)
    }
+~~~ 
+
 Endpoints:
+  
+  projects:
 
-projects:
+    *GET*
+    /projects             (get all projecs) 
+    /project/:code        (gets one project by code) 
+    
+    *POST*
+    /projects             (adds new project)  type: form-data
+    /addSchedule/:_id     (adds [Object] in project.schedule by project _id) type: json
+    /resetSchedule/:_id   (resets the schedule field in project by _id) 
+    /addHotels/:_id       (adds [Hotels] in project.hotels by project _id) type: json
+    /resetHotels/:_id     (resets the hotels field in project by _id) 
 
-*GET*
-/projects             (get all projecs) 
-/project/:code        (gets one project by code) 
+    *DELETE*
+    /project/:_id         (deletes the project by _id) 
 
-*POST*
-/projects             (adds new project)  type: form-data
-/addSchedule/:_id     (adds [Object] in project.schedule by project _id) type: json
-/resetSchedule/:_id   (resets the schedule field in project by _id) 
-/addHotels/:_id       (adds [Hotels] in project.hotels by project _id) type: json
-/resetHotels/:_id     (resets the hotels field in project by _id) 
+  hotels:
 
-*DELETE*
-/project/:_id         (deletes the project by _id) 
-hotels:
+    *GET*
+    /hotels               (get all hotels) 
 
-*GET*
-/hotels               (get all hotels) 
+    *POST*
+    /hotels               (adds new hotel) type: form-data (12 images max)
 
-*POST*
-/hotels               (adds new hotel) type: form-data (12 images max)
+    *DELETE*
+    /hotels/:_id          (deletes the hotel by _id)
 
-*DELETE*
-/hotels/:_id          (deletes the hotel by _id)
-restaurants:
+  restaurants:
 
-*GET*
-/restaurants          (get all restaurants) 
+    *GET*
+    /restaurants          (get all restaurants) 
 
-*POST*
-/restaurants          (adds new restaurant)  type: form-data (12 images max)
+    *POST*
+    /restaurants          (adds new restaurant)  type: form-data (12 images max)
 
-*DELETE*
-/restaurants/:_id     (deletes the restaurant by _id) 
-events:
+    *DELETE*
+    /restaurants/:_id     (deletes the restaurant by _id) 
 
-*GET*
-/events               (get all events) 
+  events:
 
-*POST*
-/events               (adds new event) type: form-data (12 images max)
+    *GET*
+    /events               (get all events) 
 
-*DELETE*
-/events/:_id          (deletes the event by _id) 
+    *POST*
+    /events               (adds new event) type: form-data (12 images max)
+
+    *DELETE*
+    /events/:_id          (deletes the event by _id) 
