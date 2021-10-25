@@ -5,15 +5,25 @@ const addProject = async ( req, res) =>{
   try{
     const{
       code,
-      name,
-      date,
-      group
+      accountManager,
+      groupName,
+      groupLocation,
+      arrivalDay,
+      departureDay,
+      nrPax,
+      clientCo,
+      clientAccManager,
     } = req.body
     const project = Project({
       code,
-      name,
-      date,
-      group
+      accountManager,
+      groupName,
+      groupLocation,
+      arrivalDay,
+      departureDay,
+      nrPax,
+      clientCo,
+      clientAccManager,
     })
     
     const projectStored = await project.save()

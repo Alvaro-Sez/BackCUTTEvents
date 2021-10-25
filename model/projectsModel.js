@@ -13,9 +13,14 @@ const reqString={
 
 const ProjectSchema = new Schema({
   code: reqString,
-  name: String,
-  date: String,
-  group: String,
+  accountManager: String,
+  groupName: String,
+  groupLocation: String,
+  arrivalDay: String,
+  departureDay: String,
+  nrPax: Number,
+  clientCo: String,
+  clientAccManager: String,
   hotels:[HotelSchema],
   schedule:[{
     date: String,
