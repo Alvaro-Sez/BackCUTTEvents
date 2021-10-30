@@ -68,9 +68,9 @@ project{
 ~~~ 
 
 Endpoints:
+
+login:
 ~~~   
-  login:
-  
    *POST*
    /login                 (grants access)
 ~~~  
