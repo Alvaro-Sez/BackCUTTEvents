@@ -14,10 +14,10 @@ app.use(passport.initialize())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use('/public', express.static(`${__dirname}/storage`))
-app.use( passport.authenticate('jwt', {session: false}), apiRestaurants )
-app.use( passport.authenticate('jwt', {session: false}), apiHotels )
-app.use( passport.authenticate('jwt', {session: false}), apiEvents )
 app.use( passport.authenticate('jwt', {session: false}), apiProjects )
+app.use( apiRestaurants )
+app.use( apiHotels )
+app.use( apiEvents )
 app.use( apiUsers )
 
 
