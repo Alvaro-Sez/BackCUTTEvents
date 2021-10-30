@@ -69,6 +69,12 @@ project{
 
 Endpoints:
   
+  logdin:
+  
+   *POST*
+   /login                 (grants access)
+ 
+  
   projects:
 
     *GET*
