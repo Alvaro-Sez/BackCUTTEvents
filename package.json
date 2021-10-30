@@ -5,19 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "set NODE_ENV=production&& node server.js",
+    "devStart": "set NODE_ENV=development&& nodemon server.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.1013.0",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.11",
     "multer": "^1.4.3",
-    "multer-s3": "^2.10.0"
+    "multer-s3": "^2.10.0",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"
