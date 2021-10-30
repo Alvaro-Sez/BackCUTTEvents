@@ -71,8 +71,8 @@ Endpoints:
 
 login:
 ~~~   
- *POST*
- /login                 (grants access)
+*POST*
+/login                 (grants access)
 ~~~  
   
   projects:
