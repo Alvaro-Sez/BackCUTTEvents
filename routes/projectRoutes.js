@@ -13,7 +13,6 @@ const {
 } = require('../controllers/projectControllers')
 
 apiProjects.get('/projects', getProjects)
-apiProjects.get('/project/:id', getOneProject)
 apiProjects.post('/projects', upload.none(), addProject)
 apiProjects.post('/addSchedule/:id', addScheduleArr )
 apiProjects.post('/resetSchedule/:id', resetScheduleArr)
