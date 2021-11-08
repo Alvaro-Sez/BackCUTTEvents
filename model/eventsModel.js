@@ -13,7 +13,10 @@ const EventSchema = new Schema({
   titleSideBar: String,
   title: String,
   textContent: [String],
-  imageContentUrl: [String]
+  imageContentUrl: [String],
+  price: Number,
+  coordinates: [String],
+  introduction: [String]
 },{
   timestamps: true
 })

@@ -11,7 +11,10 @@ const RestaurantSchema = new Schema({
   name: reqString,
   city: String,
   textContent:[String],
-  imageContentUrl:[String]
+  imageContentUrl:[String],
+  price: Number,
+  coordinates: [String],
+  introduction: [String]
 },{
   timestamps: true
 })

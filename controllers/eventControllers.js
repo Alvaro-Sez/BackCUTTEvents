@@ -7,14 +7,20 @@ const addEvent = async ( req, res) =>{
       city,
       titleSideBar,
       title,
-      textContent
+      textContent,
+      price,
+      coordinates,
+      introduction
     } = req.body
     const event = Event({
       name,
       city,
       titleSideBar,
       title,
-      textContent
+      textContent,
+      price,
+      coordinates,
+      introduction
     })
     if(req.files){
       const { files } = req

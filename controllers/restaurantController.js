@@ -6,13 +6,19 @@ const addRestaurant = async (req, res) => {
     const{
       name,
       city,
-      textContent
+      textContent,
+      price,
+      coordinates,
+      introduction
     } = req.body
 
     const restaurant = Restaurant({
       name,
       city,
-      textContent
+      textContent,
+      price,
+      coordinates,
+      introduction
     })
     if(req.files){
       const { files } = req

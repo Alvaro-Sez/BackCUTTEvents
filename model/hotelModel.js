@@ -10,19 +10,19 @@ const reqString={
 const HotelSchema = new Schema({
   name: reqString,
   city: String,
-  hotelInfo:{
-    direction: String,
-    numberStars: Number,
-    numberRooms: Number,
-    checkin_out: String,
-    meetingRooms: String,
-    wheelChairAccesible: Boolean,
-    wifiSpeed: String,
-    swimmingPool: String,
-    restaurants: String
-  },  
+  direction: String,
+  numberStars: Number,
+  numberRooms: Number,
+  checkin_out: String,
+  meetingRooms: String,
+  wheelChairAccesible: Boolean,
+  wifiSpeed: String,
+  swimmingPool: String,
+  restaurants: String,
   textContent: [String],
-  imageContentUrl: [String]
+  imageContentUrl: [String],
+  coordinates: [String], 
+  introduction : [String] 
 },{
   timestamps: true
 })

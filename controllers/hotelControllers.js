@@ -5,15 +5,35 @@ const addHotel = async(req,res)=> {
     const {
       name,
       city,
-      hotelInfo,
+      direction,
+      numberStars,
+      numberRooms,
+      checkin_out,
+      meetingRooms,
+      wheelChairAccesible,
+      wifiSpeed,
+      swimmingPool,
+      restaurants,
       textContent,
+      coordinates,
+      introduction
     } = req.body 
 
     const hotel = Hotel({
       name,
       city,
-      hotelInfo,
-      textContent
+      direction,
+      numberStars,
+      numberRooms,
+      checkin_out,
+      meetingRooms,
+      wheelChairAccesible,
+      wifiSpeed,
+      swimmingPool,
+      restaurants,
+      textContent,
+      coordinates,
+      introduction
     })
     if(req.files){
       const { files } = req
