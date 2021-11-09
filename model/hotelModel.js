@@ -22,7 +22,15 @@ const HotelSchema = new Schema({
   textContent: [String],
   imageContentUrl: [String],
   coordinates: [String], 
-  introduction : [String] 
+  introduction : [String],
+  price: [{
+    DUInr: Number,
+    DUIprice: Number,
+    DoubleRoomNr: Number,
+    DoubleRoomPrice: Number,
+    breakfast: Number,
+    DailyTax: Number
+  }]
 },{
   timestamps: true
 })

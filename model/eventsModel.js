@@ -12,6 +12,7 @@ const EventSchema = new Schema({
   city: String,
   titleSideBar: String,
   title: String,
+  horario: String,
   textContent: [String],
   imageContentUrl: [String],
   price: Number,
