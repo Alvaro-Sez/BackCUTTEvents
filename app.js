@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: false}))
 app.use('/public', express.static(`${__dirname}/storage`))
 app.get('/project/:id', getOneProject)
 app.use( apiUsers )
-app.use( passport.authenticate('jwt', {session: false}), apiProjects )
+app.use( /* passport.authenticate('jwt', {session: false}), */ apiProjects ) /* auth desactivada */
 app.use( apiRestaurants )
 app.use( apiHotels )
 app.use( apiEvents )
