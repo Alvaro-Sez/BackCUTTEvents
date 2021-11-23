@@ -24,7 +24,8 @@ const ProjectSchema = new Schema({
   hotels:[HotelSchema],
   schedule:[{
     date: String,
-    events: [EventSchema],
+    morningEvents: [EventSchema],
+    afternoonEvents: [EventSchema],
     lunch: [RestaurantSchema],
     dinner: [RestaurantSchema]
   }]
