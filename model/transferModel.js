@@ -7,14 +7,16 @@ const reqString = {
 };
 
 const TransferSchema = new Schema({
+    city: String,
+    company: String,
     transfer_in_out : [Number, Number],
     dispo_4h : [Number, Number],
     hextra : [String, Number],
-    dispo_5h_fuera : [Number, Number],
-    dispo_4h_aeropuerto : [Number, Number],
-    dispo_4h_noche : [Number, Number],
-    transfer_in_out_noche : [Number, Number],
-    dispo_6h_noche : [Number, Number],
+    dispo_5h_out : [Number, Number],
+    dispo_4h_airport : [Number, Number],
+    dispo_4h_night : [Number, Number],
+    transfer_in_out_night : [Number, Number],
+    dispo_6h_night : [Number, Number],
     vehicleType: String
 })
 

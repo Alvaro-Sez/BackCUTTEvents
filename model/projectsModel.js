@@ -23,13 +23,16 @@ const ProjectSchema = new Schema({
   clientCo: String,
   clientAccManager: String,
   hotels:[HotelSchema],
-  schedule:[{
-    date: String,
-    morningEvents: [EventSchema],
-    afternoonEvents: [EventSchema],
-    lunch: [RestaurantSchema],
-    dinner: [RestaurantSchema]
-  }]
+  schedule:[
+      {
+      date: String,
+      morningEvents: [EventSchema],
+      afternoonEvents: [EventSchema],
+      lunch: [RestaurantSchema],
+      dinner: [RestaurantSchema],
+      transfer_in_out:[TransferSchema]
+    }
+  ]
 },{
   timestamps: true
 })

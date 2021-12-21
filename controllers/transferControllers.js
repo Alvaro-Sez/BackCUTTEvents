@@ -3,26 +3,30 @@ const { Transfer }= require('../model/transferModel')
 const addTransfer = async (req, res) => {
     try {
         const {
+            city,
+            company,
             transfer_in_out,
             dispo_4h,
             hextra,
-            dispo_5h_fuera,
-            dispo_4h_aeropuerto,
-            dispo_4h_noche,
-            transfer_in_out_noche,
-            dispo_6h_noche,
+            dispo_5h_out,
+            dispo_4h_airport,
+            dispo_4h_night,
+            transfer_in_out_night,
+            dispo_6h_night,
             vehicleType
         } = req.body
 
         const transfer = Transfer({
+            city,
+            company,
             transfer_in_out,
             dispo_4h,
             hextra,
-            dispo_5h_fuera,
-            dispo_4h_aeropuerto,
-            dispo_4h_noche,
-            transfer_in_out_noche,
-            dispo_6h_noche,
+            dispo_5h_out,
+            dispo_4h_airport,
+            dispo_4h_night,
+            transfer_in_out_night,
+            dispo_6h_night,
             vehicleType
         })
         
