@@ -5,7 +5,7 @@ const apiTransfers = express.Router()
 
 apiTransfers.get('/transfers', getTransfers)
 apiTransfers.post('/transfers', upload.none(), addTransfer)
-apiTransfers.delete('/transfer/:id', deleteTransfer)
+apiTransfers.delete('/transfers/:id', deleteTransfer)
 
 
 module.exports = apiTransfers
