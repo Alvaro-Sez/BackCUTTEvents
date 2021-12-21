@@ -8,12 +8,14 @@ const addTransfer = async (req, res) => {
             transfer_in_out,
             dispo_4h,
             hextra,
+            hextra_night,
             dispo_5h_out,
             dispo_4h_airport,
             dispo_4h_night,
             transfer_in_out_night,
             dispo_6h_night,
-            vehicleType
+            vehicleType,
+            vehicleCapacity
         } = req.body
 
         const transfer = Transfer({
@@ -22,12 +24,14 @@ const addTransfer = async (req, res) => {
             transfer_in_out,
             dispo_4h,
             hextra,
+            hextra_night,
             dispo_5h_out,
             dispo_4h_airport,
             dispo_4h_night,
             transfer_in_out_night,
             dispo_6h_night,
-            vehicleType
+            vehicleType,
+            vehicleCapacity
         })
         
         const transferStored = await transfer.save()
