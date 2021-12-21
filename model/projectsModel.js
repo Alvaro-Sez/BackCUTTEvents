@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 const { RestaurantSchema } = require('./restaurantModel')
 const { EventSchema } = require('./eventsModel')
 const { HotelSchema } = require('./hotelModel')
+const { TransferSchema } = require('./transferModel')
 
 
 const reqString={
