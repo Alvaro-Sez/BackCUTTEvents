@@ -165,7 +165,7 @@ login:
     /transfers               (get all transfers) 
 
     *POST*
-    /transfers                (adds new transfers) type: form-data (12 images max)
+    /transfers                (adds new transfers) type: form-data/json
 
     *DELETE*
     /transfers/:_id          (deletes the transfers by _id) 
