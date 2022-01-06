@@ -16,9 +16,11 @@ project{
   schedule:[
     {
     date: String,
-    events: [Events],
+    morningEvents: [EventSchema],
+    afternoonEvents: [EventSchema],
     lunch: [Restaurants],
-    dinner: [Restaurants]
+    dinner: [Restaurants],
+    transfer_in_out:[TransferSchema]
     }
   ]
 }
@@ -29,19 +31,27 @@ project{
  hotel{ 
     name: reqString,
     city: String,
-    hotelInfo:{
-      direction: String,
-      numberStars: Number,
-      numberRooms: Number,
-      checkin_out: String,
-      meetingRooms: String,
-      wheelChairAccesible: Boolean,
-      wifiSpeed: String,
-      swimmingPool: String,
-      restaurants: String
-    },  
+    direction: String,
+    numberStars: Number,
+    numberRooms: Number,
+    checkin_out: String,
+    meetingRooms: String,
+    wheelChairAccesible: Boolean,
+    wifiSpeed: String,
+    swimmingPool: String,
+    restaurants: String
     textContent: [String],
-    imageContentUrl: [String]  (key:images when post)
+    imageContentUrl: [String],  (key:images when post)
+    coordinates: [String],
+    introduction: [String],
+    price: [{
+     DUInr: Number,
+     DUIprice: Number,
+     DoubleRoomNr: Number,
+     DoubleRoomPrice: Number,
+     breakfast: Number,
+     DailyTax: Number
+    }]
   }
 ~~~
 ~~~  
@@ -51,7 +61,10 @@ project{
     name: reqString,
     city: String,
     textContent:[String],
-    imageContentUrl: [String]  (key:images when post)
+    imageContentUrl: [String],  (key:images when post)
+    price: Number,
+    coordinates: [String],
+    introduction: [String]
   }
 ~~~   
 ~~~  
@@ -62,11 +75,33 @@ project{
     city: String,
     titleSideBar: String,
     title: String,
+    horario: String,
     textContent: [String],
-    imageContentUrl: [String]  (key: images when post)
+    imageContentUrl: [String],  (key: images when post)
+    price: Number,
+    coordinates: [String],
+    introduction: [String],
+    transfer: [TransferSchema]
    }
 ~~~ 
-
+~~~ 
+   TRANSFER:
+   trasnfer{
+    city: String,
+    company: String,
+    transfer_in_out : Number,
+    dispo_4h :  Number,
+    hextra : Number,
+    hextra_night: Number,
+    dispo_5h_out : Number,
+    dispo_4h_airport : Number,
+    dispo_4h_night :  Number,
+    transfer_in_out_night :  Number,
+    dispo_6h_night : Number,
+    vehicleType: String,
+    vehicleCapacity: Number
+   }
+~~~  
 Endpoints:
 
 login:
@@ -123,3 +158,14 @@ login:
 
     *DELETE*
     /events/:_id          (deletes the event by _id) 
+    
+   transfer:
+   
+    *GET*
+    /transfers               (get all transfers) 
+
+    *POST*
+    /transfers                (adds new transfers) type: form-data/json
+
+    *DELETE*
+    /transfers/:_id          (deletes the transfers by _id) 
