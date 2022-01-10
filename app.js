@@ -16,7 +16,7 @@ app.use(passport.initialize())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use('/public', express.static(`${__dirname}/storage`))
-app.get('/project/:id', getOneProject)
+app.get('/projects/:id', getOneProject)
 app.use( apiUsers )
 app.use( /* passport.authenticate('jwt', {session: false}), */ apiProjects ) /* auth desactivada */
 app.use( apiTransfers )
