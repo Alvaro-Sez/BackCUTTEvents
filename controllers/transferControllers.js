@@ -57,10 +57,35 @@ const deleteTransfer = async(req, res) => {
     }
 }
 
+const updateTransfer = async (req, res )=> {
+    const { id } = req.params
+    const changes = req.body
+    try{
+      if(id.length < 24) {
+        return res.status(500).send({message: 'wrong id mongo object'})
+      }
+      const transfer = await Transfer.findById(id)
+      if(!transfer){
+        return res.status(404).send({message: 'transfer not found'})
+      }
+      
+      Object.assign(transfer, changes)
+  
+      const transferUpdated = await transfer.save()
+  
+      res.status(200).send({transferUpdated})
+  
+    } catch (e) {
+      console.log(e)
+      res.status(500).send({message:'error updating the transfer'})
+    }
+  }
+
 const transferControllers = {
     addTransfer,
     getTransfers,
-    deleteTransfer
+    deleteTransfer,
+    updateTransfer
 }
 
 module.exports = transferControllers

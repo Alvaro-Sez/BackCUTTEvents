@@ -50,6 +50,29 @@ const deleteEvent = async(req, res) =>{
     res.status(404).send({message:e.message})
   }
 }
+const updateEvent = async (req, res )=> {
+  const { id } = req.params
+  const changes = req.body
+  try{
+    if(id.length < 24) {
+      return res.status(500).send({message: 'wrong id mongo object'})
+    }
+    const event = await Event.findById(id)
+    if(!event){
+      return res.status(404).send({message: 'event not found'})
+    }
+    
+    Object.assign(event, changes)
+
+    const eventUpdated = await event.save()
+
+    res.status(200).send({eventUpdated})
+
+  } catch (e) {
+    console.log(e)
+    res.status(500).send({message:'error updating the event'})
+  }
+}
 
 
 
@@ -57,6 +80,7 @@ const eventControllers = {
   addEvent,
   getEvents,
   deleteEvent,
+  updateEvent
 }
 
 

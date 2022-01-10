@@ -29,6 +29,7 @@ const addProject = async ( req, res) =>{
     const projectStored = await project.save()
     res.status(201).send({projectStored})
   }catch(e){
+    console.log(e)
     res.status(500).send({message: e.message})
   }
 }
@@ -52,7 +53,8 @@ const deleteProject = async ( req, res ) => {
       await projectToDelete.remove()
       res.status(200).send({succes: true})
     } catch(e){
-      res.status(404).send({message: e.message})
+    console.log(e)
+    res.status(404).send({message: e.message})
     }
 }
 
@@ -67,6 +69,7 @@ const addScheduleArr = async ( req, res ) => {
     const projectUpdated = await project.save()
     res.status(200).send({projectUpdated})
   } catch (e){
+    console.log(e)
     res.status(404).send({message: e.message})
   }
 }
@@ -81,6 +84,7 @@ const resetScheduleArr = async ( req, res ) => {
     const projectUpdated = await project.save()
     res.status(404).send({projectUpdated})
   } catch (e){
+    console.log(e)
     res.status(404).send({message: e.message})
   }
 }
@@ -96,6 +100,7 @@ const addHotelsArr = async ( req, res ) =>{
     const projectUpdated = await project.save()
     res.status(200).send({projectUpdated})
   } catch (e){
+    console.log(e)
     res.status(404).send({message: e.message})
   }
 }
@@ -110,9 +115,36 @@ const resetHotelsArr = async (req, res )=>{
     const projectUpdated = await project.save()
     res.status(404).send({projectUpdated})
   } catch (e){
+    console.log(e)
     res.status(404).send({message: e.message})
   }
 }
+
+const updateProject = async (req, res )=> {
+  const { id } = req.params
+  const changes = req.body
+  try{
+    if(id.length < 24) {
+      return res.status(500).send({message: 'wrong id mongo object'})
+    }
+    const project = await Project.findById(id)
+    console.log(`this is the proejct ${project}`)
+    if(!project){
+      return res.status(404).send({message: 'project not found'})
+    }
+    
+    Object.assign(project, changes)
+
+    const projectUpdated = await project.save()
+
+    res.status(200).send({projectUpdated})
+
+  } catch (e) {
+    console.log(e)
+    res.status(500).send({message:'error updating the project'})
+  }
+}
+
 
 const projectControllers = {
   addProject,
@@ -122,7 +154,8 @@ const projectControllers = {
   resetScheduleArr,
   addHotelsArr,
   resetHotelsArr,
-  getOneProject
+  getOneProject,
+  updateProject
 }
 
 module.exports = projectControllers

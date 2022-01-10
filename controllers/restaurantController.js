@@ -47,10 +47,36 @@ const deleteRestaurant = async(req, res) =>{
   }
 }
 
+const updateRestaurant = async (req, res )=> {
+  const { id } = req.params
+  const changes = req.body
+  try{
+    if(id.length < 24) {
+      return res.status(500).send({message: 'wrong id mongo object'})
+    }
+    const restaurant = await Restaurant.findById(id)
+
+    if(!restaurant){
+      return res.status(404).send({message: 'restaurant not found'})
+    }
+    
+    Object.assign(restaurant, changes)
+
+    const restaurantUpdated = await restaurant.save()
+
+    res.status(200).send({restaurantUpdated})
+
+  } catch (e) {
+    console.log(e)
+    res.status(500).send({message:'error updating the restaurant'})
+  }
+}
+
 const restaurantControllers = {
   addRestaurant,
   getRestaurants,
-  deleteRestaurant
+  deleteRestaurant,
+  updateRestaurant
 }
 
 

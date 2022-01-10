@@ -62,10 +62,36 @@ const deleteHotel = async(req, res) =>{
   }
 }
 
+const updateHotel = async (req, res )=> {
+  const { id } = req.params
+  const changes = req.body
+  try{
+    if(id.length < 24) {
+      return res.status(500).send({message: 'wrong id mongo object'})
+    }
+    const hotel = await Hotel.findById(id)
+    if(!hotel){
+      return res.status(404).send({message: 'hotel not found'})
+    }
+    
+    Object.assign(hotel, changes)
+
+    const hotelUpdated = await hotel.save()
+
+    res.status(200).send({hotelUpdated})
+
+  } catch (e) {
+    console.log(e)
+    res.status(500).send({message:'error updating the hotel'})
+  }
+}
+
+
 const hotelControllers = {
   addHotel,
   getHotels,
-  deleteHotel
+  deleteHotel,
+  updateHotel
 }
 
 

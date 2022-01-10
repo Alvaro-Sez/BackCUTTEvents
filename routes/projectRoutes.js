@@ -9,7 +9,7 @@ const {
   resetScheduleArr,
   addHotelsArr,
   resetHotelsArr,
-  getOneProject
+  updateProject
 } = require('../controllers/projectControllers')
 
 apiProjects.get('/projects', getProjects)
@@ -18,7 +18,8 @@ apiProjects.post('/addSchedule/:id', addScheduleArr )
 apiProjects.post('/resetSchedule/:id', resetScheduleArr)
 apiProjects.post('/addHotels/:id', addHotelsArr )
 apiProjects.post('/resetHotels/:id', resetHotelsArr)
-apiProjects.delete('/project/:id', deleteProject)
+apiProjects.delete('/projects/:id', deleteProject)
+apiProjects.patch('/projects/:id', upload.none(), updateProject)
 
 
 
