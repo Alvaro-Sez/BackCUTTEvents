@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const { TransferSchema } = require('./transferModel')
 
 const reqString={
   type:String,
@@ -13,7 +14,8 @@ const RestaurantSchema = new Schema({
   imageContentUrl:[String],
   price: Number,
   coordinates: [String],
-  introduction: [String]
+  introduction: [String],
+  transfer:[TransferSchema]
 },{
   timestamps: true
 })

@@ -123,6 +123,7 @@ const resetHotelsArr = async (req, res )=>{
 const updateProject = async (req, res )=> {
   const { id } = req.params
   const changes = req.body
+  console.log(id,changes)
   try{
     if(id.length < 24) {
       return res.status(500).send({message: 'wrong id mongo object'})
