@@ -114,7 +114,7 @@ login:
 
     *GET*
     /projects             (get all projecs) 
-    /project/:code        (gets one project by code) 
+    /projects/:code        (gets one project by code) 
     
     *POST*
     /projects             (adds new project)  type: form-data
@@ -124,7 +124,10 @@ login:
     /resetHotels/:_id     (resets the hotels field in project by _id) 
 
     *DELETE*
-    /project/:_id         (deletes the project by _id) 
+    /projects/:_id        (deletes the project by _id) 
+    
+    *PATCH*
+    /projects/:_id        (updates the project by _id)
 
   hotels:
 
@@ -136,7 +139,10 @@ login:
 
     *DELETE*
     /hotels/:_id          (deletes the hotel by _id)
-
+    
+    *PATCH*
+    /hotels/:_id         (updates the hotel by _id)
+  
   restaurants:
 
     *GET*
@@ -147,6 +153,9 @@ login:
 
     *DELETE*
     /restaurants/:_id     (deletes the restaurant by _id) 
+    
+    *PATCH*
+    /restaurants/:_id         (updates the restaurant by _id)
 
   events:
 
@@ -159,6 +168,10 @@ login:
     *DELETE*
     /events/:_id          (deletes the event by _id) 
     
+    *PATCH*
+    /events/:_id         (updates the event by _id)
+    
+    
    transfer:
    
     *GET*
@@ -169,3 +182,8 @@ login:
 
     *DELETE*
     /transfers/:_id          (deletes the transfers by _id) 
+    
+    *PATCH*
+    /transfers/:_id         (updates the transfer by _id)
+    
+    
